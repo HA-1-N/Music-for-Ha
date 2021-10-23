@@ -247,6 +247,7 @@ const app = {
             _this.setConfig('isRedo', _this.isRedo);
         }
 
+
         audioEl.onended = function () {
             if (_this.isRedo) {
                 audioEl.play();

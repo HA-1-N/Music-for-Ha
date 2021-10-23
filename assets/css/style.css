@@ -8,6 +8,10 @@
     height: 24px;
 }
 
+.height-32{
+    height: 32px;
+}
+
 .height-48{
     height: 48px;
 }
@@ -27,7 +31,8 @@ body{
 .dashboard {
     width: 414px;
     max-height: 736px;
-    overflow: auto;
+    height: 100%;
+    overflow: hidden;
 }
 
 .dashboard-wrap{
@@ -101,7 +106,7 @@ span.current-time{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .old-heart{
@@ -131,7 +136,7 @@ span.current-time{
 }
 
 .btn{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .redo-item.active{
@@ -157,12 +162,12 @@ span.current-time{
 .list-music{
     position: absolute;
     width: 414px;
-    max-height: 700px;
+    max-height: 100%;
     overflow: auto;
     padding: 2rem;
     transform: translateY(0);
     transition: transform linear 1s;
-    background-color: aquamarine;
+    background-color: #dff9fb;
     display: none;
 }
 
@@ -182,7 +187,8 @@ span.current-time{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1.2rem 0;
+    /* margin: 1.2rem 0; */
+    padding: 0.4rem 0;
 }
 
 .play-list-music.active{
