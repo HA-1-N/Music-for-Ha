@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player For HA</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/icons/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/icons/fontawesome-free-5.15.3-web/css/all.min.css">
+</head>
+
+<body>
+    <div class="player">
+        <div class="dashboard">
+            <div class="dashboard-wrap">
+                <div class="dashboard-wrap-header">
+                    <i class="ti-arrow-left icon-header-back"></i>
+
+                    <div class="header-title-wrap">
+                        <h2 class="header-playing-now">Playing Now</h2>
+                        <h3 class="header-name-music">Name Music</h3>
+                        <h4 class="header-name-singer">Name Singer</h4>
+                    </div>
+
+                    <i class="far fa-clone icon-header-clone"></i>
+                </div>
+
+                <div class="height-24"></div>
+
+                <div class="dashboard-img">
+                    <img src="./assets/imgs/picture_1.jpg" alt="" class="img-item">
+                </div>
+
+                <div class="height-24"></div>
+
+                <div class="dashboard-wrap-input">
+                    <span class="current-time">00:00</span>
+                    <input type="range" name="" id="progress" class="progress" value="0" step="1" min="0" max="100">
+                    <span class="total-time">00:00</span>
+                </div>
+
+                <div class="height-24"></div>
+
+                <div class="toolbar">
+                    <div class="toolbar-heart">
+                        <i class="fas fa-heart old-heart"></i>
+                        <i class="fas fa-heart new-heart"></i>
+                    </div>
+
+                    <div class="toolbar-down">
+                        <i class="ti-download"></i>
+                    </div>
+
+                    <div class="toolbar-share">
+                        <i class="ti-share"></i>
+                    </div>
+
+                    <div class="toolbar-list">
+                        <i class="ti-list-ol"></i>
+                    </div>
+                </div>
+
+                <div class="height-48"></div>
+
+                <div class="control">
+                    <div class="btn btn-redo">
+                        <i class="ti-loop redo-item"></i>
+                    </div>
+
+                    <div class="btn btn-skip-backward">
+                        <i class="ti-control-skip-backward"></i>
+                    </div>
+
+                    <div class="btn btn-toggle">
+                        <i class="ti-control-pause btn-pause"></i>
+                        <i class="ti-control-play btn-play"></i>
+                    </div>
+
+                    <div class="btn btn-skip-forward">
+                        <i class="ti-control-skip-forward"></i>
+                    </div>
+
+                    <div class="btn btn-random">
+                        <i class="ti-control-shuffle random-item"></i>
+                    </div>
+                </div>
+
+                <audio src="" id="audio"></audio>
+            </div>
+        </div>
+
+        <div class="list-music">
+            <div class="list-music-header">
+                <div class="list-music-header-angle-down">
+                    <i class="ti-angle-down"></i>
+                </div>
+                <div class="list-music-header-redo">
+                    <i class="ti-loop"></i>
+                </div>
+            </div>
+
+            <div class="list-music-wrap js-list-music">
+                <!-- <div class="play-list-music">
+
+                    <div class="music-location">0</div>
+
+                    <div class="play-list-item">
+                        <h4 class="music-name">Name</h4>
+                        <h5 class="singer-name">Singer name</h5>
+                    </div>
+                    <div class="play-list-icon">
+                        <i class="ti-more-alt"></i>
+                    </div>
+
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./assets/JS/main.js"></script>
+</body>
+
+</html>
