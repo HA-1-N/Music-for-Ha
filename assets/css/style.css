@@ -26,6 +26,7 @@ body{
 
 .player{
     position: relative;
+    overflow: hidden;
 }
 
 .dashboard {
@@ -168,12 +169,10 @@ span.current-time{
     transform: translateY(0);
     transition: transform linear 1s;
     background-color: #dff9fb;
-    display: none;
 }
 
 .list-music.action{
     transform: translateY(-100%);
-    display: block;
 }
 
 .list-music-header{
