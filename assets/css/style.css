@@ -112,24 +112,12 @@ span.current-time{
     font-size: 1.4rem;
 }
 
-.old-heart{
+.btn-heart{
     color:#bdc3c7;
 }
 
-.new-heart{
+.btn-heart.click{
     color: red;
-}
-
-.dashboard .new-heart{
-    display: none;
-}
-
-.dashboard.click .old-heart{
-    display: none;
-}
-
-.dashboard.click .new-heart{
-    display: inline-block;
 }
 
 .control{
@@ -216,4 +204,8 @@ span.current-time{
     font-weight: 400;
     opacity: 0.6;
     margin: 0;
+}
+
+.music-total-time{
+    font-size: 0.8rem;
 }

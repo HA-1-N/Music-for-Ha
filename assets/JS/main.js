@@ -30,8 +30,8 @@ const prevBtn = $('.btn-skip-backward');
 const randomBtn = $('.random-item');
 const redoBtn = $('.redo-item');
 const playlistmusicEl = $('.play-list-music');
-const oldHeartEl = $('.old-heart');
-const newHeartEl = $('.new-heart');
+const toolbarHeartEl = $('.toolbar-heart');
+const heartBtn = $('.btn-heart');
 
 const toolbarListEl = $('.toolbar-list');
 const listMusicParentEl = $('.list-music');
@@ -45,7 +45,7 @@ const app = {
             singer: "Cinnamons, Evening, Cinema",
             img: "./assets/imgs/picture_1.jpg",
             path: "./assets/music/Summertime-CinnamonsEveningCinema-6046288.mp3",
-            time: "",
+            time: "4:11",
         },
 
         {
@@ -54,7 +54,7 @@ const app = {
             singer: "Pristin",
             img: "./assets/imgs/picture_2.jpg",
             path: "./assets/music/Aloha-Pristin-5130093.mp3",
-            time: "",
+            time: "2:48",
         },
 
         {
@@ -63,7 +63,7 @@ const app = {
             singer: "Baek Ah Yeon",
             img: "./assets/imgs/picture_3.jpg",
             path: "./assets/music/ALotLikeLoveMoonLoversScarletHeartRyeoOst-BaekAhYeon-4592142.mp3",
-            time: "",
+            time: "3:23",
         },
 
         {
@@ -72,7 +72,7 @@ const app = {
             singer: "Brown Eyes",
             img: "./assets/imgs/picture_4.jpg",
             path: "./assets/music/AlreadyOneYear-BrownEyes_3fcmp.mp3",
-            time: "",
+            time: "3:27",
         },
 
         {
@@ -81,7 +81,7 @@ const app = {
             singer: "Chen",
             img: "./assets/imgs/picture_5.jpg",
             path: "./assets/music/BestLuckItsOkayThatsLoveOST-ChenEXOM-3257348.mp3",
-            time: "",
+            time: "3:45",
         },
 
         {
@@ -90,7 +90,7 @@ const app = {
             singer: "Eddy Kim",
             img: "./assets/imgs/picture_6.jpg",
             path: "./assets/music/IWillGoToYouLikeTheFirstSnowLive-EunJiAPink-5412374.mp3",
-            time: "",
+            time: "3:41",
         },
 
         {
@@ -99,7 +99,7 @@ const app = {
             singer: "Beast",
             img: "./assets/imgs/picture_7.jpg",
             path: "./assets/music/OnRainyDay-BEAST_382zy.mp3",
-            time: "",
+            time: "3:40",
         },
 
         {
@@ -108,7 +108,7 @@ const app = {
             singer: "Suzy",
             img: "./assets/imgs/picture_8.jpg",
             path: "./assets/music/RingMyBellUncontrollablyFondOST-SuzymissA-4500690.mp3",
-            time: "",
+            time: "3:25",
         },
 
         {
@@ -117,7 +117,7 @@ const app = {
             singer: "Loco, Punch",
             img: "./assets/imgs/picture_9.jpg",
             path: "./assets/music/SayYesMoonLoversScarletHeartRyoOST-LocoPunch-4569672.mp3",
-            time: "",
+            time: "3:38",
         },
 
         {
@@ -126,7 +126,7 @@ const app = {
             singer: "Eddy Kim",
             img: "./assets/imgs/picture_10.jpg",
             path: "./assets/music/YouAreSoBeautifulGoblinOst-EddyKim-4717902.mp3",
-            time: "",
+            time: "3:15",
         },
 
         {
@@ -135,7 +135,7 @@ const app = {
             singer: "BolBBalgan4",
             img: "./assets/imgs/picture_11.jpg",
             path: "./assets/music/Youi-BolBBalgan4-4599250.mp3",
-            time: "",
+            time: "2:50",
         },
     ],
 
@@ -277,19 +277,11 @@ const app = {
             listMusicParentEl.classList.remove('action');
         }
 
-        oldHeartEl.onclick = function () {
-            if (!_this.isclickHeart) {
-                dashboardEl.classList.add('click');
-            }
-            _this.setConfig('isclickHeart', _this.isclickHeart)
+        toolbarHeartEl.onclick = function () {
+            _this.isclickHeart = !_this.isclickHeart;
+            heartBtn.classList.toggle('click', _this.isclickHeart);
         }
 
-        newHeartEl.onclick = function () {
-            if (!_this.isclickHeart) {
-                dashboardEl.classList.remove('click');
-            }
-            _this.setConfig('isclickHeart', _this.isclickHeart)
-        }
     },
 
     render: function () {
@@ -303,9 +295,8 @@ const app = {
                         <h4 class="music-name">${song.name}</h4>
                         <h5 class="singer-name">${song.singer}</h5>
                     </div>
-                    <div class="play-list-icon">
-                        <i class="ti-more-alt"></i>
-                    </div>
+                    
+                    <span class="music-total-time">${song.time}</span>
 
                 </div>
             `;
@@ -365,7 +356,7 @@ const app = {
                     block: "nearest",
                 });
             }
-        }, 200);
+        }, 100);
     },
 
     start: function () {
