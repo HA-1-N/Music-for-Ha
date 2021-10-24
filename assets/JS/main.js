@@ -30,6 +30,8 @@ const prevBtn = $('.btn-skip-backward');
 const randomBtn = $('.random-item');
 const redoBtn = $('.redo-item');
 const playlistmusicEl = $('.play-list-music');
+const oldHeartEl = $('.old-heart');
+const newHeartEl = $('.new-heart');
 
 const toolbarListEl = $('.toolbar-list');
 const listMusicParentEl = $('.list-music');
@@ -141,6 +143,7 @@ const app = {
     isPlaying: false,
     isRandom: false,
     isRedo: false,
+    isclickHeart: false,
 
     config: JSON.parse(localStorage.getItem(PLAYER_MUSIC_KEY)) || {},
 
@@ -273,6 +276,20 @@ const app = {
         angledownBtn.onclick = function () {
             listMusicParentEl.classList.remove('action');
         }
+
+        oldHeartEl.onclick = function () {
+            if (!_this.isclickHeart) {
+                dashboardEl.classList.add('click');
+            }
+            _this.setConfig('isclickHeart', _this.isclickHeart)
+        }
+
+        newHeartEl.onclick = function () {
+            if (!_this.isclickHeart) {
+                dashboardEl.classList.remove('click');
+            }
+            _this.setConfig('isclickHeart', _this.isclickHeart)
+        }
     },
 
     render: function () {
@@ -307,6 +324,7 @@ const app = {
     loadConfig: function () {
         this.isRandom = this.config.isRandom;
         this.isRedo = this.config.isRedo;
+        this.isclickHeart = this.config.isclickHeart;
     },
 
     nextSong: function () {
